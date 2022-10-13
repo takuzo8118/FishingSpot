@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('favorites', function (Blueprint $table) {
             $table->id();
             // こちらでも外部キー制約をつけるuser_id
-            $table->foregin('user_id')->references('id')->on('users');
+            $table->foreignId('user_id')->constrained();
             //favorites_idにも外部キー制約
             $table->foreignId('favorites_id')->constrained();
             $table->timestamps();
