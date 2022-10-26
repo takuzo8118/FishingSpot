@@ -62,13 +62,20 @@ return [
             'path' => storage_path('logs/laravel.log'),
             'level' => env('LOG_LEVEL', 'debug'),
         ],
-
+        // パーミッションの変更を行った上で翌日も権限を適用するために変更
         'daily' => [
             'driver' => 'daily',
-            'path' => storage_path('logs/laravel.log'),
-            'level' => env('LOG_LEVEL', 'debug'),
+            'path' => storage_path('logs/laravel-'.php_sapi_name().'.log'),
+            'level' => 'debug',
             'days' => 14,
         ],
+        // 元々はこちらが記載されていたものコメントアウト部分
+        // 'daily' => [
+        //     'driver' => 'daily',
+        //     'path' => storage_path('logs/laravel.log'),
+        //     'level' => env('LOG_LEVEL', 'debug'),
+        //     'days' => 14,
+        // ],
 
         'slack' => [
             'driver' => 'slack',
