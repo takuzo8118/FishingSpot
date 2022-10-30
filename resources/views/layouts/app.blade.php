@@ -75,6 +75,9 @@
         <main class="py-4">
             @yield('content')
         </main>
+        <footer class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+            <p class="ms-auto">©️Fishing Spot</p>
+        </footer>
     </div>
 </body>
 </html>
