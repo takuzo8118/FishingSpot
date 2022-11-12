@@ -51,7 +51,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    {{ Auth::user()->name }}のマイページ
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -69,14 +69,16 @@
                         @endguest
                     </ul>
                 </div>
-            </div>
+            </div>{{-- /.container --}}
         </nav>
 
         <main class="py-4">
             @yield('content')
         </main>
         <footer class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <p class="ms-auto">©️Fishing Spot</p>
+            <div class="ms-auto">
+                <p class="text-center">©️Fishing Spot</p>
+            </div>
         </footer>
     </div>
 </body>
