@@ -209,7 +209,9 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        'Form'      => Collective\Html\FormFacade::class,
+        'Html'      => Collective\Html\HtmlFacade::class,
+        'Flash'     => Laracasts\Flash\Flash::class,
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
-
 ];
